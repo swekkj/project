@@ -51,124 +51,28 @@
             <img class="grid__loader" src="/images/grid.svg" width="60" alt="Loader image" />
             <!-- Grid sizer for a fluid Isotope (Masonry) layout -->
             <div class="grid__sizer"></div>
-            <!-- Grid items -->
-            <div class="grid__item grid__item--size-a fights">
+            <!-- Grid items --> 
+        <%
+            for(var i=0; i<rows.length; i++)
+            {
+                var oneItem = rows[i];
+        %>
+            <div class="grid__item grid__item--size-a <%=oneItem.property%>">
                 <div class="slider">
-                    <div class="slider__item"><img src="/images/dp1.jpg" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/dp2.jpg" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/dp3.jpg" alt="Dummy" /></div>
+                    <div class="slider__item"><img src="<%=oneItem.img1%>" alt="Dummy" /></div>
+                    <div class="slider__item"><img src="<%=oneItem.img2%>" alt="Dummy" /></div>
+                    <div class="slider__item"><img src="<%=oneItem.img3%>" alt="Dummy" /></div>
                 </div>
                 <div class="meta">
-                    <h3 class="meta__title">DragonBall Fighters Z</h3>
-                    <span class="meta__brand">BANDAI NAMCO</span>
-                    <span class="meta__price">₩40,000</span>
+                    <h3 class="meta__title"><%=oneItem.name%></h3>
+                    <span class="meta__brand"><%=oneItem.company%></span>
+                    <span class="meta__price">₩<%=oneItem.price%></span>
                 </div>
                 <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
             </div>
-            <div class="grid__item fps">
-                <div class="slider">
-                    <div class="slider__item"><img src="/images/bg1.jpg" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/bg2.jpg" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/bg3.jpg" alt="Dummy" /></div>
-                </div>
-                <div class="meta">
-                    <h3 class="meta__title">PLAYERUNKNOWN'S BATTLEGROUNDS</h3>
-                    <span class="meta__brand">PUBS Corporation</span>
-                    <span class="meta__price">₩32,000</span>
-                </div>
-                <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
-            </div>
-            <div class="grid__item simulation">
-                <div class="slider">
-                    <div class="slider__item"><img src="/images/hf1.jpg" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/hf2.jpg" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/hf3.jpg" alt="Dummy" /></div>
-                </div>
-                <div class="meta">
-                    <h3 class="meta__title">House Flipper</h3>
-                    <span class="meta__brand">PlayWay S.A., Frozen District</span>
-                    <span class="meta__price">₩20,500</span>
-                </div>
-                <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
-            </div>
-            <div class="grid__item rpg">
-                <div class="slider">
-                    <div class="slider__item"><img src="/images/raft.jpg" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/raft1.jpg" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/raft2.jpg" alt="Dummy" /></div>
-                </div>
-                <div class="meta">
-                    <h3 class="meta__title">RAFT</h3>
-                    <span class="meta__brand">Axolot Games</span>
-                    <span class="meta__price">₩21,000</span>
-                </div>
-                <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
-            </div>
-            <div class="grid__item grid__item--size-a fps">
-                <div class="slider">
-                    <div class="slider__item"><img src="/images/rs1.png" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/rs2.png" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/rs3.png" alt="Dummy" /></div>
-                </div>
-                <div class="meta">
-                    <h3 class="meta__title">Tom Clancy's Rainbow Six® Siege</h3>
-                    <span class="meta__brand">Ubisoft</span>
-                    <span class="meta__price">₩40,000</span>
-                </div>
-                <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
-            </div>
-            <div class="grid__item rpg">
-                <div class="slider">
-                    <div class="slider__item"><img src="/images/sv1.png" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/sv2.png" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/sv3.png" alt="Dummy" /></div>
-                </div>
-                <div class="meta">
-                    <h3 class="meta__title">Stardew Valley</h3>
-                    <span class="meta__brand">Chucklefish</span>
-                    <span class="meta__price">₩16,000</span>
-                </div>
-                <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
-            </div>
-            <div class="grid__item grid__item--size-a simulation">
-                <div class="slider">
-                    <div class="slider__item"><img src="/images/fm1.png" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/fm2.png" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/fm3.png" alt="Dummy" /></div>
-                </div>
-                <div class="meta">
-                    <h3 class="meta__title">Football Manager 2018</h3>
-                    <span class="meta__brand">SEGA</span>
-                    <span class="meta__price">₩54,000</span>
-                </div>
-                <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
-            </div>
-            <div class="grid__item simulation">
-                <div class="slider">
-                    <div class="slider__item"><img src="/images/601.png" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/602.png" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/603.png" alt="Dummy" /></div>
-                </div>
-                <div class="meta">
-                    <h3 class="meta__title">60 Seconds!</h3>
-                    <span class="meta__brand">Robot Gentleman</span>
-                    <span class="meta__price">₩10,500</span>
-                </div>
-                <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
-            </div>
-            <div class="grid__item rpg">
-                <div class="slider">
-                    <div class="slider__item"><img src="/images/wl1.png" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/wl2.png" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/wl3.png" alt="Dummy" /></div>
-                </div>
-                <div class="meta">
-                    <h3 class="meta__title">Wizard Of Legend</h3>
-                    <span class="meta__brand">Contingent99</span>
-                    <span class="meta__price">₩16,000</span>
-                </div>
-                <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
-            </div>
+        <%
+            }
+        %>
         </section>
     </div>
     <script src="/javascripts/isotope.pkgd.min.js"></script>
