@@ -9,17 +9,6 @@ var pool = mysql.createPool({
   database: 'swe',
   connectionLimit: 5,
 });
-router.get('/', function(req, res, next) {
-  pool.getConnection(function(err, conn){
-    if(err) console.error(err);
-    conn.query("SELECT * FROM board", function(err, rows){
-      if(err) console.error("err : " + err);
-      console.log("rows : "+ JSON.stringify(rows));
-      res.render('index', {title: 'test', rows: rows});
-      conn.release();
-    });
-  });
-});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
