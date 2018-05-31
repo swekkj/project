@@ -3,9 +3,29 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/popup.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/javascripts/popup.js"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div>
+    <a href="#layer2" class="btn-example">딤처리 팝업레이어 1</a>
+      <div class="dim-layer">
+          <div class="dimBg"></div>
+          <div id="layer2" class="pop-layer" width="500px" height="500px">
+              <div class="pop-container">
+                  <div class="pop-conts">
+                      <!--content //-->
+                      <iframe width="100%" height="315" src="https://www.youtube.com/embed/TLR93jdkSww" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                      <div class="btn-r">
+                          <a href="#" class="btn-layerClose">Close</a>
+                      </div>
+                      <!--// content-->
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <script src="/javascripts/popup.js"></script>
   </body>
 </html>
