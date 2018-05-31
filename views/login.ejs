@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="kr">
+	<head>
+		<title>Login</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/loginjoinstyle.css">
+	</head>
+<body>
+
+
+<div class="form">
+  <div class="form-panel one">
+    <div class="form-header">
+      <h1>Account Login</h1>
+    </div>
+    <div class="form-content">
+      <form id = "login" action="/shop/login" mothod="post">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required="required"/>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required="required"/>
+        </div>
+        <div class="form-group">
+          <label class="form-remember">
+            <input type="checkbox"/>Remember Me
+          </label><a href="#" class="form-recovery">Forgot Password?</a>
+        </div>
+        <div class="form-group">
+          <button type="submit">Log In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

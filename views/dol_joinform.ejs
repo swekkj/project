@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering WebSite</title>
+    <meta name="description" content="Blueprint: A responsive product grid layout with touch-friendly Flickity galleries and Isotope-powered filter functionality." />
+    <meta name="keywords" content="blueprint, template, layout, grid, responsive, products, store, filter, isotope, flickity" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- Pixel Fabric clothes icons -->
+    <link rel="stylesheet" type="text/css" href="/fonts/pixelfabric-clothes/style.css" />
+    <!-- General demo styles & header -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/demo.css" />
+    <!-- Flickity gallery styles -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/flickity.css" />
+    <!-- Component styles -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/component.css" />
+    <script src="/javascripts/modernizr.custom.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script>
+      $(function(){
+        $("#btnJoin").click(function(){
+            if($("#id").val() == ""){
+              alert("아이디를 꼭 입력해주세요!");
+              $("#id").focus();
+              return ;
+            }
+            if($("#passwd").val() == ""){
+              alert("비밀번호를 꼭 입력해주세요!");
+              $("#passwd").focus();
+              return ;
+            }
+            if($("#name").val() == ""){
+              alert("닉네임을 꼭 입력해주세요!");
+              $("#name").focus();
+              return ;
+            }
+            if($("#birth").val() == ""){
+              alert("생년월일을 꼭 입력해 주세요!");
+              $("#birth").focus();
+              return ;
+            }
+            if($("#email").val() == ""){
+              alert("이메일를 꼭 입력해주세요!");
+              $("#email").focus();
+              return ;
+            }
+
+            if($("#birth").val().length != 8){
+              alert("생일은 8글자로 입력해 주세요!");
+              $("#birth").focus();
+              return ;
+            }
+            if(isNaN($("#birth")).val()){
+              alert("생일은 숫자만 입력해 주세요!");
+              $("#birth").focus();
+              return ;
+            }
+            if($("#join").val() == ""){
+              alert("가입 구분을 선택해주세요!");
+              $("#join").focus();
+              return ;
+            }
+
+            $("#joinform").submit();
+          });
+    });
+    </script>
+  </head>
+  <body>
+    <form id="joinform" action="/shop/joinform" method="post">
+      <table>
+        <tr>
+          <th>아이디</th>
+          <td><input type="text" name="id" id="id" size="12" maxLength="12"></td>
+        </tr>
+
+        <tr>
+          <th>비밀번호</th>
+          <td><input type="password" name="passwd" id="passwd" size="12" maxLength="12"></td>
+        </tr>
+
+        <tr>
+          <th>닉네임</th>
+          <td><input type="text" name="nickname" id="nickname" size="10" maxLength="10"></td>
+        </tr>
+
+        <tr>
+          <th>생년월일</th>
+          <td><input type="text" name="birth" id="birth" size="8" maxLength="8"></td>
+        </tr>
+
+
+        <tr>
+          <th>이메일</th>
+          <td><input type="email" name="email" id="email" size="30" maxLength="50"></td>
+        </tr>
+
+        <tr>
+          <th>가입 구분</th>
+          <td>
+            <input type="hidden" name="property" id="property" >
+            <select>
+              <option value="Buyer">Buyer</option>
+              <option value="Seller">Seller</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="submit" id="btnJoin" name="join" value="가입">
+            <input type="reset" name="cancel" value="취소">
+          <td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
