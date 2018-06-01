@@ -78,3 +78,9 @@
     background-color: #1f326a;
     color: #fff;
   }
+  * {margin: 0;padding: 0;}
+[class^="pop-wrap"] {overflow: hidden;position: fixed;top: 50%;left: 50%;width: 700px;background: #fff;z-index: 10001;border: 1px solid #896e4a;}
+.pop-header {position: relative;height: 58px;padding-left: 25px;color: #000;font-size: 22px;line-height: 240%;}
+.pop-header .btnp-close {position: absolute;right: 15px;top: 15px;font-size: 16px;}
+.pop-cont {padding: 25px;}
+.layer-scroll {overflow:hidden;}

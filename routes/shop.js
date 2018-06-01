@@ -21,6 +21,7 @@ router.get('/', function(req, res, next) {
     });
   });
 });
+/*
 router.get('/:name',(req,res,next)=>{
   var idx = req.params.name;
   console.log(idx);
@@ -34,5 +35,5 @@ router.get('/:name',(req,res,next)=>{
       conn.release();
     });
   });
-});
+});*/
 module.exports = router;

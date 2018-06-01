@@ -22,7 +22,9 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/flickity.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/component.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/popup.css" />
+    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="magnific-popup/jquery.magnific-popup.js"></script>
     <script src="/javascripts/modernizr.custom.js"></script>
     <script src="/javascripts/popup.js"></script>
     <style type="text/css">
@@ -30,20 +32,29 @@
           height:35px;
           width: 35px;
           border-radius: 50%;
-          background-color:grey;
+          background-color:rgb(0, 0, 0);
           padding-left: 11px;
           padding-top: 11px;
           margin-left:8px;
+          font-color:#FFF;
       }
+      .mfp-no-margins img.mfp-img {
+	    padding: 0;
+        }
+        /* position of shadow behind the image */
+        .mfp-no-margins .mfp-figure:after {
+            top: 0;
+            bottom: 0;
+        }
+        /* padding for main container */
+        .mfp-no-margins .mfp-container {
+            padding: 0;
+        }
+
 
     </style>
   </head>
   <body>
-
-    <a href="/signup"><button_circle type="button" class="glyphicon glyphicon-user" style="float:right" ></button_circle></a>
-    <a href="/login"><button_circle type="button" class="glyphicon glyphicon-log-in" style="float:right"></button_circle></a>
-
-
     <header class="bp-header cf">
         <span>ProtoType</span>
         <h1>Software Engineering WebSite</h1>
@@ -58,7 +69,6 @@
             {
                 var oneItem = rows[i];
         %>
-            <a href="/shop/<%=oneItem.name%>">
             <div class="grid__item grid__item--size-a <%=oneItem.property%>">
                 <div class="slider">
                     <div class="slider__item"><img src="/images/<%=oneItem.img1%>" alt="Dummy" /></div>
@@ -71,23 +81,21 @@
                     <h3 class="meta__title"><%=oneItem.name%></h3>
                     <span class="meta__brand"><%=oneItem.company%></span>
                     <span class="meta__price">₩<%=oneItem.price%></span>
-
                 </div>
-
                 <div class="dim-layer">
                     <div class="dimBg"></div>
                         <div id="trailer" class="pop-layer">
                             <div class="pop-container">
                                 <div class="pop-conts">
                                     <!--content //-->
-                                    <iframe width="450px" height="250px" src="https://www.youtube.com/embed/TLR93jdkSww" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                    <iframe id="youtube" width="450px" height="250px" src="https://www.youtube.com/embed/oBI0MU73nlc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                 </div>
-                                <div class="btn-r"><a href="#" class="btn-layerClose">Close</a></div>
+                                <div class="btn-r"><a href="#" id='closebtn' class="btn-layerClose">Close</a></div>
                             </div>
-                        </div>
+                        </div> 
                 </div>
                 <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
-            </div></a>
+            </div>
         <%
             }
         %>
@@ -102,7 +110,10 @@
             <button class="action filter__item" data-filter=".dresses"><i class="icon icon--dress"></i><span class="action__text">AOS</span></button>
             <button class="action filter__item" data-filter=".simulation"><i class="icon icon--trousers"></i><span class="action__text">SIMULATION</span></button>
             <button class="action filter__item" data-filter=".fps"><i class="icon icon--shoe"></i><span class="action__text">FPS</span></button>
+            <a href="/signup"><button_circle type="button" class="glyphicon glyphicon-user" style="float:right" ></button_circle></a>
+            <a href="/login"><button_circle type="button" class="glyphicon glyphicon-log-in" style="float:right"></button_circle></a>
         </div>
+            
         <button class="cart">
             <i class="cart__icon fa fa-shopping-cart"></i>
             <span class="text-hidden">Shopping cart</span>
@@ -114,5 +125,6 @@
 	<script src="/javascripts/flickity.pkgd.min.js"></script>
     <script src="/javascripts/main.js"></script>
     <script src="/javascripts/popup.js"></script>
+    <script src="magnific-popup/jquery.magnific-popup.js"></script>
   </body>
 </html>
