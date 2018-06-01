@@ -34,21 +34,25 @@
             {
                 var oneItem = rows[i];
         %>
+            <a href="/board/read/<%=oneItem.name%>">
             <div class="grid__item grid__item--size-a <%=oneItem.property%>">
                 <div class="slider">
                     <div class="slider__item"><img src="/images/<%=oneItem.img1%>" alt="Dummy" /></div>
                     <div class="slider__item"><img src="/images/<%=oneItem.img2%>" alt="Dummy" /></div>
-                    <div class="slider__item"><img src="/images/<%=oneItem.img3%>" alt="Dummy" /></div>
+                    <div class="slider__item"><img src="/images/<%=oneItem.img3%>" alt="Dummy" /></div>  
                 </div>
+                
                 <div class="meta">
+                    <a href="#trailer" class="btn-example"><span class="glyphicon glyphicon-film" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
                     <h3 class="meta__title"><%=oneItem.name%></h3>
                     <span class="meta__brand"><%=oneItem.company%></span>
                     <span class="meta__price">₩<%=oneItem.price%></span>
+                     
                 </div>
-                <a href="#layer" class="btn-example"><span class="glyphicon glyphicon-film"></span></a>
+                
                 <div class="dim-layer">
                     <div class="dimBg"></div>
-                        <div id="layer" class="pop-layer">
+                        <div id="trailer" class="pop-layer">
                             <div class="pop-container">
                                 <div class="pop-conts">
                                     <!--content //-->
@@ -59,7 +63,7 @@
                         </div>
                 </div>
                 <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
-            </div>
+            </div></a>
         <%
             }
         %>
