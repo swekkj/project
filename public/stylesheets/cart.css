@@ -29,7 +29,7 @@ img{max-width:100%;}
 /*end reset*/
 body{
 	font-family: 'Signika', sans-serif;
-	background:#003366;
+	background:rgba(0, 0, 0, 0.8);
 }
 /*-- main --*/
 .main h1{
@@ -45,7 +45,7 @@ body{
 	margin:0 auto;
 }
 .main-grid1{
-	background:#F05555;
+	background:#4285F4;
 	padding:1em 0;
 }
 .main-grid1 ul{
@@ -201,10 +201,10 @@ span.actual {
     font-size: 15px;
     color: #fff;
     text-decoration: none;
-    background: #F05555;
+    background: #4285F4;
 }
 .total-right a:hover{
-	background:#003366;
+	background:#F05555;
 }
 .copy-right{
 	padding:3em 0 0;
