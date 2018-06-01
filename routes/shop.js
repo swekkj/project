@@ -5,7 +5,7 @@ var mysql = require('mysql');
 var pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'root',
+  password: 'PASSWORD',
   database: 'swe',
   connectionLimit: 5,
 });
@@ -29,6 +29,7 @@ router.get('/:name',(req,res,next)=>{
     var sqlQuery = "SELECT * FROM game_detail WHERE name=?";
     conn.query(sqlQuery, [idx], (err,rows)=>{
       if(err) console.error("query err : " + err);
+      console.log(rows[0]);
       res.render('detail',{title:"detail",row:rows[0]});
       conn.release();
     });
