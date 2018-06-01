@@ -5,7 +5,7 @@ var mysql = require('mysql');
 var pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'chlwodms*1',
+  password: 'PASSWORD',
   database: 'swe',
   connectionLimit: 5,
 });
@@ -17,6 +17,19 @@ router.get('/', function(req, res, next) {
     conn.query("SELECT * FROM game", function(err,rows){
       if(err) console.error("query error : " + err);
       res.render('shop',{title: 'Shop', rows: rows});
+      conn.release();
+    });
+  });
+});
+router.get('/:name',(req,res,next)=>{
+  var idx = req.params.name;
+  console.log(idx);
+  pool.getConnection((err,conn)=>{
+    if(err) console.error("connection err : "+err);
+    var sqlQuery = "SELECT * FROM game_detail WHERE name=?";
+    conn.query(sqlQuery, [idx], (err,rows)=>{
+      if(err) console.error("query err : " + err);
+      res.render('detail',{title:"detail",row:rows[0]});
       conn.release();
     });
   });

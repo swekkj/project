@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <title>Software Engineering WebSite</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -46,6 +48,7 @@
         <span>ProtoType</span>
         <h1>Software Engineering WebSite</h1>
     </header>
+<<<<<<< HEAD
 
     <div class="dim-layer">
         <div class="dimBg"></div>
@@ -60,6 +63,8 @@
                 </div>
             </div>
     </div>
+=======
+>>>>>>> 64dbc54e6bd17a3b188e215f47fabf7539d7cd5b
     <div class="view">
         <!-- Grid -->
         <section class="grid grid--loading">
@@ -70,34 +75,36 @@
             {
                 var oneItem = rows[i];
         %>
+            <a href="/shop/<%=oneItem.name%>">
             <div class="grid__item grid__item--size-a <%=oneItem.property%>">
                 <div class="slider">
                     <div class="slider__item"><img src="/images/<%=oneItem.img1%>" alt="Dummy" /></div>
                     <div class="slider__item"><img src="/images/<%=oneItem.img2%>" alt="Dummy" /></div>
                     <div class="slider__item"><img src="/images/<%=oneItem.img3%>" alt="Dummy" /></div>
                 </div>
+
                 <div class="meta">
+                    <a href="#trailer" class="btn-example"><span class="glyphicon glyphicon-film" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
                     <h3 class="meta__title"><%=oneItem.name%></h3>
                     <span class="meta__brand"><%=oneItem.company%></span>
                     <span class="meta__price">₩<%=oneItem.price%></span>
+
                 </div>
-                <a href="#layer" class="btn-example">trailer</a>
+
                 <div class="dim-layer">
                     <div class="dimBg"></div>
-                        <div id="layer" class="pop-layer">
+                        <div id="trailer" class="pop-layer">
                             <div class="pop-container">
                                 <div class="pop-conts">
                                     <!--content //-->
-                                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/TLR93jdkSww" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                    <div class="btn-r">
-                                        <a href="#" class="btn-layerClose">Close</a>
-                                    </div>
+                                    <iframe width="450px" height="250px" src="https://www.youtube.com/embed/TLR93jdkSww" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                 </div>
+                                <div class="btn-r"><a href="#" class="btn-layerClose">Close</a></div>
                             </div>
                         </div>
                 </div>
                 <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
-            </div>
+            </div></a>
         <%
             }
         %>
@@ -119,6 +126,7 @@
             <span class="cart__count">0</span>
         </button>
     </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="/javascripts/isotope.pkgd.min.js"></script>
 	<script src="/javascripts/flickity.pkgd.min.js"></script>
     <script src="/javascripts/main.js"></script>

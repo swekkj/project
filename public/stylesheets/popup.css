@@ -29,10 +29,10 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 410px;
-    height: auto;
-    background-color: #fff;
-    border: 5px solid #3571B5;
+    width: 500px;
+    height: 335px;
+    background-color: rgb(56, 52, 52);
+    border: 5px solid rgb(23, 25, 27);
     z-index: 10;
   }
   
