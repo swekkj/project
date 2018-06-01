@@ -7,14 +7,13 @@
 	</head>
 <body>
 
-
 <div class="form">
   <div class="form-panel one">
     <div class="form-header">
       <h1>Account Login</h1>
     </div>
     <div class="form-content">
-      <form id = "login" action="/shop/login" mothod="post">
+      <form id = "login" action="/login" mothod="post">
         <div class="form-group">
           <label for="username">Username</label>
           <input type="text" id="username" name="username" required="required"/>
@@ -24,9 +23,8 @@
           <input type="password" id="password" name="password" required="required"/>
         </div>
         <div class="form-group">
-          <label class="form-remember">
-            <input type="checkbox"/>Remember Me
-          </label><a href="#" class="form-recovery">Forgot Password?</a>
+          <a href="/signin" class="form-recovery">회원가입</a>
+          <a href="#" class="form-recovery">Forgot Password?</a>
         </div>
         <div class="form-group">
           <button type="submit">Log In</button>
