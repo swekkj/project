@@ -2,11 +2,19 @@
 <html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <title>Software Engineering WebSite</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <link rel="shortcut icon" href="/images/favicon.ico">
     <!-- import css -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" type="text/css" href="/fonts/pixelfabric-clothes/style.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/demo.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/flickity.css" />
@@ -15,13 +23,30 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="/javascripts/modernizr.custom.js"></script>
     <script src="/javascripts/popup.js"></script>
+    <style type="text/css">
+     button_circle {
+          height:35px;
+          width: 35px;
+          border-radius: 50%;
+          background-color:grey;
+          padding-left: 11px;
+          padding-top: 11px;
+          margin-left:8px;
+      }
+
+    </style>
   </head>
   <body>
+
+    <a href="/signup"><button_circle type="button" class="glyphicon glyphicon-user" style="float:right" ></button_circle></a>
+    <a href="/login"><button_circle type="button" class="glyphicon glyphicon-log-in" style="float:right"></button_circle></a>
+
+
     <header class="bp-header cf">
         <span>ProtoType</span>
         <h1>Software Engineering WebSite</h1>
     </header>
-    <a href="login" class="btn-example">login</a>
+
     <div class="dim-layer">
         <div class="dimBg"></div>
             <div id="login" class="pop-layer">
