@@ -5,7 +5,7 @@ var mysql = require('mysql');
 var pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'PASSWORD',
+  password: 'chlwodms*1',
   database: 'swe',
   connectionLimit: 5,
 });
@@ -14,7 +14,6 @@ router.get('/', function(req, res, next){
     res.render('signup');
 });
 router.post('/', function(req, res, next){
-  console.log("hi");
   var id = req.body.username;
   var passwd = req.body.password;
   var birth = req.body.birth;
