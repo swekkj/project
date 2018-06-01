@@ -23,12 +23,13 @@ router.get('/', function(req, res, next) {
 });
 router.get('/:name',(req,res,next)=>{
   var idx = req.params.name;
+  console.log(idx);
   pool.getConnection((err,conn)=>{
     if(err) console.error("connection err : "+err);
-    var sqlQuery = "SELECT idx, creator_id, title, content, filePath, hit FROM board WHERE idx=?";
+    var sqlQuery = "SELECT * FROM game_detail WHERE name=?";
     conn.query(sqlQuery, [idx], (err,rows)=>{
       if(err) console.error("query err : " + err);
-      res.render('read',{title:"글 조회",row:rows[0]});
+      res.render('detail',{title:"detail",row:rows[0]});
       conn.release();
     });
   });
