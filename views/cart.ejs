@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/stylesheets/cart.css" rel="stylesheet" type="text/css" media="all" />
+<link href='//fonts.googleapis.com/css?family=Signika:400,300,600,700' rel='stylesheet' type='text/css'>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>$(document).ready(function(c) {
+	$('.alert-close').on('click', function(c){
+		$('.message').fadeOut('slow', function(c){
+	  		$('.message').remove();
+		});
+	});
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.alert-close1').on('click', function(c){
+		$('.message1').fadeOut('slow', function(c){
+	  		$('.message1').remove();
+		});
+	});
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.alert-close2').on('click', function(c){
+		$('.message2').fadeOut('slow', function(c){
+	  		$('.message2').remove();
+		});
+	});
+});
+</script>
+</head>
+<body>
+	<!-- main -->
+		<div class="main">
+			<h1>Shopping Cart Widget</h1>
+			<div class="main-grid1">
+			</div>
+			<div class="main-grid2">
+				<h2>My Shopping Bag (3)</h2>
+				<div class="cart_box">
+					<div class="message">
+						 <div class="alert-close"> </div>
+						<div class="list_img"><img src="images/1.jpg" class="img-responsive" alt=""/></div>
+						<div class="list_desc"><h4><a href="#">Velit esse molestie</a></h4><span class="actual">
+						 $30.00</span></div>
+						  <div class="clear"></div>
+					</div>
+				</div>
+				<div class="cart_box">
+				 <div class="message1">
+					 <div class="alert-close1"> </div>
+					<div class="list_img"><img src="images/2.jpg" class="img-responsive" alt=""/></div>
+					<div class="list_desc"><h4><a href="#">Velit esse molestie</a></h4><span class="actual">
+					 $15.00</span></div>
+					  <div class="clear"></div>
+				  </div>
+				</div>
+				<div class="cart_box1">
+				  <div class="message2">
+					 <div class="alert-close2"> </div>
+					<div class="list_img"><img src="images/3.jpg" class="img-responsive" alt=""/></div>
+					<div class="list_desc"><h4><a href="#">Velit esse molestie</a></h4><span class="actual">
+					 $20.00</span></div>
+					  <div class="clear"></div>
+				  </div>
+				</div>
+				<div class="total">
+					<div class="total-left">
+						<p>Total :<span> $65</span></p>
+					</div>
+					<div class="total-right">
+						<a href="#">주문 하기</a>
+					</div>
+					<div class="clear"> </div>
+				</div>
+			</div>
+		</div>
+	<!-- //main -->
+</body>
+</html>
