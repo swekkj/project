@@ -16,6 +16,14 @@ router.post('/',function(req,res,next){
     var password = req.body.password;
     console.log(username);
     console.log(password);
+    pool.getConnection(function(err,conn){
+      if(err) console.error("poll connection error : " + err);
+      conn.query("SELECT * FROM game", function(err,rows){
+        if(err) console.error("query error : " + err);
+        res.render('login_shop',{title: 'Shop', rows: rows,user:username});
+        conn.release();
+      });
+    });
 });
 router.get('/', function(req, res, next) {
   pool.getConnection(function(err,conn){
