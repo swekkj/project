@@ -1,31 +1,85 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/popup.css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/javascripts/popup.js"></script>
-  </head>
-  <body>
-    <div>
-    <a href="#layer2" class="btn-example">딤처리 팝업레이어 1</a>
-      <div class="dim-layer">
-          <div class="dimBg"></div>
-          <div id="layer2" class="pop-layer" width="500px" height="500px">
-              <div class="pop-container">
-                  <div class="pop-conts">
-                      <!--content //-->
-                      <iframe width="100%" height="315" src="https://www.youtube.com/embed/TLR93jdkSww" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                      <div class="btn-r">
-                          <a href="#" class="btn-layerClose">Close</a>
-                      </div>
-                      <!--// content-->
-                  </div>
-              </div>
-          </div>
-      </div>
+<head>
+        <meta charset="UTF-8" />
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <title>Software Engineering WebSite</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+        <!-- import css -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+        <link rel="stylesheet" type="text/css" href="/fonts/pixelfabric-clothes/style.css" />
+        <link rel="stylesheet" type="text/css" href="/stylesheets/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/stylesheets/flickity.css" />
+        <link rel="stylesheet" type="text/css" href="/stylesheets/component.css" />
+        <link rel="stylesheet" type="text/css" href="/stylesheets/popup.css" />
+        <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel="stylesheet" type="text/css" href="/stylesheets/new_pop.css" />
+        <script src="magnific-popup/jquery.magnific-popup.js"></script>
+        <script src="/javascripts/modernizr.custom.js"></script>
+        <script src="/javascripts/popup.js"></script>
+        <style type="text/css">
+         button_circle {
+              height:35px;
+              width: 35px;
+              border-radius: 50%;
+              background-color:rgb(0, 0, 0);
+              padding-left: 11px;
+              padding-top: 11px;
+              margin-left:8px;
+              font-color:#FFF;
+          }
+          .mfp-no-margins img.mfp-img {
+            padding: 0;
+            }
+            /* position of shadow behind the image */
+            .mfp-no-margins .mfp-figure:after {
+                top: 0;
+                bottom: 0;
+            }
+            /* padding for mainbu container */
+            .mfp-no-margins .mfp-container {
+                padding: 0;
+            }
+    
+    
+        </style>
+        
+</head>
+<body>
+    <script src="/javascripts/new_pop.js"></script>
+    <a href="#layer01" data-popup="#layer01" class="layer-popup">레이어팝업 보기 111</a>
+    <br>
+    <br>
+    <br /><br />
+    <div style="height:1000px"></div>
+
+    <!-- 레이어 팝업 콘텐츠는 바디 엔드 태그 바로 위에 위치시키는 것이 좋습니다.-->
+    <div class="pop-wrap" id="layer01" style="display:none">
+        <dl>
+            <dt class="pop-header">로그인 <a href="#none" class="btnp-close">팝업창 닫힘</a></dt>
+            <dd class="pop-box">
+                <div class="pop-cont">
+                    <div class="pop-msg">
+                        <form id = "login" action="/test" method="post">
+                            <textarea name='fucking'></textarea>
+                            <input type="submit"></button>
+                        </form>
+                    </div>
+                </div>
+            </dd>
+        </dl>
     </div>
-    <script src="/javascripts/popup.js"></script>
-  </body>
+</body>
 </html>

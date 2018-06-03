@@ -11,6 +11,12 @@ var pool = mysql.createPool({
 });
 
 /* GET home page. */
+router.post('/',function(req,res,next){
+    var username = req.body.username;
+    var password = req.body.password;
+    console.log(username);
+    console.log(password);
+});
 router.get('/', function(req, res, next) {
   pool.getConnection(function(err,conn){
     if(err) console.error("poll connection error : " + err);

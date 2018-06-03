@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="/fonts/pixelfabric-clothes/style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/loginjoinstyle.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/new_pop.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/demo.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/flickity.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/component.css" />
@@ -77,28 +79,60 @@
                 </div>
 
                 <div class="meta">
-                    <a href="#trailer" class="btn-example"><span class="glyphicon glyphicon-film" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
+                    <a href="#<%=oneItem.name%>_trailer" data-popup="#<%=oneItem.name%>_trailer" class="layer-popup"><span class="glyphicon glyphicon-film" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
                     <h3 class="meta__title"><%=oneItem.name%></h3>
                     <span class="meta__brand"><%=oneItem.company%></span>
                     <span class="meta__price">₩<%=oneItem.price%></span>
                 </div>
-                <div class="dim-layer">
-                    <div class="dimBg"></div>
-                        <div id="trailer" class="pop-layer">
-                            <div class="pop-container">
-                                <div class="pop-conts">
-                                    <!--content //-->
-                                    <iframe id="youtube" width="450px" height="250px" src="https://www.youtube.com/embed/oBI0MU73nlc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="pop-wrap" id="<%=oneItem.name%>_trailer" style="display:none">
+                    <dl>
+                        <dt class="pop-header"><%=oneItem.name%></dt>
+                        <dd class="pop-box">
+                            <div class="pop-cont">
+                                <div class="pop-msg">
+                                        <iframe id="youtube" width="450px" height="250px" src="<%=oneItem.trailer%>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                 </div>
-                                <div class="btn-r"><a href="#" id='closebtn' class="btn-layerClose">Close</a></div>
                             </div>
-                        </div> 
+                        </dd>
+                        <a href="#none" class="btnp-close">팝업창 닫힘</a>
+                    </dl>
                 </div>
                 <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
             </div>
         <%
             }
         %>
+        <div class="pop-wrap" id="login" style="display:none">
+            <dl>
+                <div class="form">
+                    <div class="form-panel one">
+                        <div class="form-header">
+                            <h1>Account Login</h1>
+                        </div>
+                        <div class="form-content">
+                            <form id = "login" action="/shop" method="post">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" id="username" name="username" required="required"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" required="required"/>
+                                </div>
+                                <div class="form-group">
+                                    <a href="/signup" class="form-recovery">회원가입</a>
+                                    <a href="#" class="form-recovery">Forgot Password?</a>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit">Log In</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <a href="#none" class="btnp-close">팝업창 닫힘</a>
+            </dl>
+        </div>
         </section>
     </div>
     <div class="bar">
@@ -111,7 +145,9 @@
             <button class="action filter__item" data-filter=".simulation"><i class="icon icon--trousers"></i><span class="action__text">SIMULATION</span></button>
             <button class="action filter__item" data-filter=".fps"><i class="icon icon--shoe"></i><span class="action__text">FPS</span></button>
             <a href="/signup"><button_circle type="button" class="glyphicon glyphicon-user" style="float:right" ></button_circle></a>
-            <a href="/login"><button_circle type="button" class="glyphicon glyphicon-log-in" style="float:right"></button_circle></a>
+            <a href="#login" data-popup="#login" class="layer-popup">
+                <button_circle type="button" class="glyphicon glyphicon-log-in" style="float:right"></button_circle>
+            </a>
         </div>
             
         <button class="cart">
@@ -126,5 +162,6 @@
     <script src="/javascripts/main.js"></script>
     <script src="/javascripts/popup.js"></script>
     <script src="magnific-popup/jquery.magnific-popup.js"></script>
+    <script src="/javascripts/new_pop.js"></script>
   </body>
 </html>
