@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Order</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+<link href="/stylesheets/order.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<h1 id="logo">주문 하기</h1>
+		</div>
+	</div>
+	<div id="page" class="container">
+		<div id="content">
+			<div id="box1">
+				<div id = "doc">
+					<p>※ 쿠폰 할인은 정상가 기준으로 금액이 적용되며, 쿠폰 1장당 상품 1개의 수량에만 적용이 가능합니다.</p>
+					<p>※ 적립금은 1,000원 이상 적립되면 1원 단위 금액을 제외한 적립금이 자동 할인 적용됩니다. (일부상품은 제외될수 있습니다.)</p>
+					<p>※ 캐시의 사용 가능한 최소 금액은 10원입니다.</p>
+				</div>
+			</div>
+			<div>
+				<ul class="style1">
+					<li class="first">
+						<h3><em><img src="images/<%=bucketList[0].image%>" alt="" width="130" height="130" class="alignleft border" /></em><%=bucketList[0].name%></h3>
+						<p>₩<%=bucketList[0].price%></p>
+						<p><a href="/shop/detail/<%=bucketList[0].idx%>" class="button-style">상세 보기</a></p>
+					</li>
+					<%
+
+						var price=bucketList[0].price;
+						for(var i=1; i<bucketList.length; i++)
+						{
+							var oneItem = bucketList[i];
+							price += oneItem.price;
+					%>
+						<li>
+							<h3><em><img src="images/<%=oneItem.image%>" alt="" width="130" height="130" class="alignleft border" /></em><%=oneItem.name%></h3>
+							<p>₩<%=oneItem.price%></p>
+							<p><a href="/shop/detail/<%=oneItem.idx%>" class="button-style">상세 보기</a></p>
+						</li>
+					<%
+						}
+					%>
+				</ul>
+			</div>
+		</div>
+		<div id="sidebar">
+			<h2>결제 하기</h2>
+			<h2>Total : ₩<%=price%></h2>
+			<ul class="style3">
+				<li class="first">
+					<p><input type="radio" name="chk">신용/체크카드 결제</p>
+				</li>
+				<li>
+					<p><input type="radio" name="chk">계좌이체 결제</p>
+				</li>
+				<li>
+					<p><input type="radio" name="chk">가상계좌 결제</p>
+				</li>
+				<li>
+					<p><input type="radio" name="chk">휴대폰 결제</p>
+				</li>
+			</ul>
+			<div id="paybtn">
+				<ul>
+					<li><a href="#" class="button-style">결제</a></li>
+					<li><a href="/shop" class="button-style">계속 쇼핑하기</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

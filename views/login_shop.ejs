@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <title>Software Engineering WebSite</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!-- import css -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="/stylesheets/cart.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='//fonts.googleapis.com/css?family=Signika:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/fonts/pixelfabric-clothes/style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/loginjoinstyle.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/new_pop.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/demo.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/flickity.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/component.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/popup.css" />
+    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="magnific-popup/jquery.magnific-popup.js"></script>
+    <script src="/javascripts/modernizr.custom.js"></script>
+    <script src="/javascripts/popup.js"></script>
+    <style type="text/css">
+     button_circle {
+          height:35px;
+          width: 35px;
+          border-radius: 50%;
+          background-color:rgb(0, 0, 0);
+          padding-left: 11px;
+          padding-top: 11px;
+          margin-left:8px;
+          font-color:#FFF;
+      }
+
+
+      .button-8:hover .eff-8{
+        border:0px solid rgb(0,0,0);
+      }
+      .button-8:hover {
+          border:0px solid rgb(0,0,0);
+      }
+      .button-8:hover a{
+        color:rgb(102,130,3);
+      }
+      .button-8{
+        width:80px;
+        height:40px;
+        border:2px solid rgb(102,130,3);
+        float:left;
+        text-align:center;
+        cursor:pointer;
+        position:relative;
+        box-sizing:border-box;
+        overflow:hidden;
+        margin-left:16px;
+      }
+      .button-8 a{
+        font-family:arial;
+        font-size:16px;
+        color:#fff;
+        text-decoration:none;
+        line-height:40px;
+        transition:all .5s ease;
+        z-index:2;
+        position:relative;
+      }
+      .button-style
+      {
+      	display: inline-block;
+      	background-color: #1F768D;
+      	padding: 5px 30px;
+      	height: 24px;
+        width: auto;
+      	line-height: 24px;
+      	text-decoration: none;
+      	text-align: center;
+      	color: #FFFFFF;
+      }
+      .mfp-no-margins img.mfp-img {
+	    padding: 0;
+        }
+        /* position of shadow behind the image */
+        .mfp-no-margins .mfp-figure:after {
+            top: 0;
+            bottom: 0;
+        }
+        /* padding for main container */
+        .mfp-no-margins .mfp-container {
+            padding: 0;
+        }
+
+
+    </style>
+  </head>
+  <body>
+    <header class="bp-header cf">
+        <span>ProtoType</span>
+        <h1>Software Engineering WebSite</h1>
+    </header>
+    <div class="view">
+        <!-- Grid -->
+        <section class="grid grid--loading">
+            <img class="grid__loader" src="/images/grid.svg" width="60" alt="Loader image" />
+            <div class="grid__sizer"></div>
+        <%
+            for(var i=0; i<rows.length; i++)
+            {
+                var oneItem = rows[i];
+        %>
+            <div class="grid__item grid__item--size-a <%=oneItem.property%>">
+                <div class="slider">
+                    <div class="slider__item"><img src="/images/<%=oneItem.img1%>" alt="Dummy" /></div>
+                    <div class="slider__item"><img src="/images/<%=oneItem.img2%>" alt="Dummy" /></div>
+                    <div class="slider__item"><img src="/images/<%=oneItem.img3%>" alt="Dummy" /></div>
+                </div>
+
+                <div class="meta">
+                    <a href="#trailer<%=oneItem.idx%>" data-popup="#trailer<%=oneItem.idx%>" class="layer-popup"><span class="glyphicon glyphicon-film" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
+                    <a href="/shop/detail/<%=oneItem.idx%>" ><span class="glyphicon glyphicon-search" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
+                    <h3 class="meta__title"><%=oneItem.name%></h3>
+                    <span class="meta__brand"><%=oneItem.company%></span>
+                    <span class="meta__price">₩<%=oneItem.price%></span>
+                </div>
+                <div class="pop-wrap" id="trailer<%=oneItem.idx%>" style="display:none">
+                    <dl>
+                        <dt class="pop-header"><%=oneItem.name%></dt>
+                        <dd class="pop-box">
+                            <div class="pop-cont">
+                                <div class="pop-msg">
+                                        <iframe id="youtube" width="450px" height="250px" src="<%=oneItem.trailer%>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </dd>
+                        <a href="#none" class="btnp-close">팝업창 닫힘</a>
+                    </dl>
+                </div>
+                <a href="/shop/<%=oneItem.name%>">
+                    <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
+                </a>
+            </div>
+        <%
+            }
+        %>
+        <div class="pop-wrap" id="bucket" style="display:none">
+            <div class="main">
+                    <div class="main-grid2">
+                        <h2>장바구니</h2>
+                        <div class="cart_box">
+                             <%
+                                for(var i=0; i<bucket.length; i++)
+                                {
+                                    var oneItem = bucket[i];
+                            %>
+                                <div class="message" id="msg<%=oneItem.idx%>">
+                                    <div class="alert-close" id="close<%=oneItem.idx%>"> </div>
+                                    <div class="list_img"><img src="/images/<%=oneItem.image%>" class="img-responsive" alt=""/></div>
+                                    <div class="list_desc"><h4><a href="#"><%=oneItem.name%></a></h4><span class="actual">
+                                            ₩<%=oneItem.price%></span></div>
+                                    <div class="clear"></div>
+                                </div>
+                                <script>
+                                    $(document).ready(function(c) {
+                                        $('#close<%=oneItem.idx%>').on('click', function(c){
+                                            $('#msg<%=oneItem.idx%>').fadeOut('slow', function(c){
+                                                    $('#msg<%=oneItem.idx%>').remove();
+                                            });
+                                        });
+                                    });
+                                </script>
+                            <%
+                                }
+                            %>
+                        </div>
+                        <div class="total">
+                            <div class="total-left">
+                                <p>Total :<span> $65</span></p>
+                            </div>
+                            <div class="total-right">
+                                <a href="/order">주문 하기</a>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+                    </div>
+            </div>
+            <a href="#none" class="btnp-close">팝업창 닫힘</a>
+        </div>
+        </section>
+    </div>
+    <div class="bar">
+        <div class="filter">
+            <span class="filter__label">Category: </span>
+            <button class="action filter__item filter__item--selected" data-filter="*">All</button>
+            <button class="action filter__item" data-filter=".rpg"><i class="icon icon--jacket"></i><span class="action__text">RPG</span></button>
+            <button class="action filter__item" data-filter=".fights"><i class="icon icon--shirt"></i><span class="action__text">FIGHTS</span></button>
+            <button class="action filter__item" data-filter=".aos"><i class="icon icon--dress"></i><span class="action__text">AOS</span></button>
+            <button class="action filter__item" data-filter=".simulation"><i class="icon icon--trousers"></i><span class="action__text">SIMULATION</span></button>
+            <button class="action filter__item" data-filter=".fps"><i class="icon icon--shoe"></i><span class="action__text">FPS</span></button>
+            Welcome &nbsp;&nbsp;<span style="font-weight:bold; text-decoration:underline;"><%=user%></span>
+            <div class="button-8" style="margins-left:8px;">
+								<div class="eff-8"></div>
+								<a href="/shop"> Logout </a>
+						</div>
+        </div>
+
+        <a href="#bucket" data-popup="#bucket" class="layer-popup">
+        <button class="cart">
+            <i class="cart__icon fa fa-shopping-cart"></i>
+            <span class="text-hidden">Shopping cart</span>
+            <span class="cart__count"><%=bucket.length%></span>
+        </button></a>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="/javascripts/isotope.pkgd.min.js"></script>
+	<script src="/javascripts/flickity.pkgd.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/popup.js"></script>
+    <script src="magnific-popup/jquery.magnific-popup.js"></script>
+    <script src="/javascripts/new_pop.js"></script>
+  </body>
+</html>

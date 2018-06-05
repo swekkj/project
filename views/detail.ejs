@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+<link href="../../stylesheets/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../stylesheets/button.css" rel="stylesheet" type="text/css" media="all" />
+
+<style>
+.middle {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+ }
+
+
+ pre{
+ 	overflow: auto;
+	white-space: pre-wrap;
+	font-family: 'Open Sans', sans-serif;
+ }
+}
+.starR.on{background-position:0 0;}
+</style>
+</head>
+<body>
+<img src="../../images/<%=rows[0].img1%>"  width="1500" height="1000" alt="" id="full-screen-background-image" />
+<img style="opacity:0.9; background-color: black;" width="1500" height="1000" alt="" id="full-screen-background-image" />
+<div id="wrapper">
+	<div id="header-wrapper" class="middle">
+		<font color=white size=10><%=rows[0].name%></font>
+	</div>
+
+
+	<div id="page" class="container">
+		<div id="content">
+			<div id="box1">
+				<center>
+					<div id="slideshow">
+						<img src="../../images/<%=rows[0].img1%>" width="450px" height="300px" style="float:center"/>
+						<img src="../../images/<%=rows[0].img2%>" width="450px" height="300px"/>
+						<img src="../../images/<%=rows[0].img3%>" width="450px" height="300px"/>
+					</div>
+					<script src="https://cdn.rawgit.com/pamelafox/a8b77c43f56da1753348/raw/slideshow.js"></script>
+
+			    <script>
+						slideShow(document.getElementById("slideshow"), slideshow=2000);
+			    </script>
+				</center>
+			</div>
+
+
+			<div>
+				<ul class="style1">
+					<div style="margin-bottom:15px;">
+
+						<font size="6">지금 바로 구매하기!</font>
+						<div class="button-8" style="float:right;">
+								<div class="eff-8"></div>
+								<a href="/shop/detail/bucket/<%=rows[0].idx%>"> 장바구니 </a>
+						</div>
+						<div style="float:right"><font size="6" >₩<%=rows[0].price%></font></div>
+					</div>
+
+
+
+					<li class="first">
+						<h2>최근 사용자 평가</h2>
+						<pre><%=rows[0].evaluation%></pre>
+						<p><a href="#" class="button-style">Read More</a></p>
+					</li>
+
+					<li>
+						<h2>About Game</h2>
+						<pre><%=rows[0].about%></pre>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<div id="sidebar">
+
+			<ul class="style3">
+				<li class="first">
+					<h3>지원 언어</h3>
+					<p><%=rows[0].language%></p>
+				</li>
+
+				<li>
+					<h3>출시일</h3>
+					<pre><%=rows[0].date%></pre>
+				</li>
+				<li>
+					<h3>장르</h3>
+					<p><%=rows[0].genre%></p>
+				</li>
+
+				<li>
+					<h3>최소 사양</h3>
+					<pre><%=rows[0].condi%></pre>
+				</li>
+
+				<li>
+					<p>개발사 : <%=rows[0].company%></p>
+					<p>배급사 : <%=rows[0].publisher%></p>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+</body>
+</html>
